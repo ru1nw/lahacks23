@@ -1,14 +1,15 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import { CallToAction } from '@/components/CallToAction'
-import { Faqs } from '@/components/Faqs'
-import { Footer } from '@/components/Footer'
-import { Header } from '@/components/Header'
-import { Hero } from '@/components/Hero'
-import { Pricing } from '@/components/Pricing'
-import { PrimaryFeatures } from '@/components/PrimaryFeatures'
-import { SecondaryFeatures } from '@/components/SecondaryFeatures'
-import { Testimonials } from '@/components/Testimonials'
+import { CallToAction } from "@/components/CallToAction";
+import { Faqs } from "@/components/Faqs";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { Pricing } from "@/components/Pricing";
+import { PrimaryFeatures } from "@/components/PrimaryFeatures";
+import { SecondaryFeatures } from "@/components/SecondaryFeatures";
+import { Testimonials } from "@/components/Testimonials";
+import Profile from "@/components/Profile";
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
       </Head>
       <Header />
       <main>
+        <Profile />
+        <a href="/api/auth/login">Login</a>
+        <a href="/api/auth/logout">Logout</a>
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
@@ -32,5 +36,5 @@ export default function Home() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
