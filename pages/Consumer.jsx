@@ -8,9 +8,9 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Logo } from '@/components/Logo';
-import { Profile } from '@/components/Profile';
+import Profile from '@/components/Profile';
 
-export function Indiv() {
+export function Consumer() {
   let lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
   veniam, quis nostrud exercitation';

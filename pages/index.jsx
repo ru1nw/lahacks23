@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Indiv } from "./Indiv";
+import { Consumer } from "./Consumer";
 import { Pricing } from "@/components/Pricing";
 import { PrimaryFeatures } from "@/components/PrimaryFeatures";
 import { SecondaryFeatures } from "@/components/SecondaryFeatures";
@@ -22,7 +22,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Indiv />
       </main>
     </>
   );
