@@ -1,14 +1,6 @@
 import Head from 'next/head';
-import Link from 'next/link';
 
-import { Button } from '@/components/Button';
 import { CompanyCard } from '@/components/CompanyCard';
-import { SelectField, TextField } from '@/components/Fields';
-import { Footer } from '@/components/Footer';
-import { Header } from '@/components/Header';
-import { Hero } from '@/components/Hero';
-import { Logo } from '@/components/Logo';
-import Profile from '@/components/Profile';
 
 export function Consumer() {
   let lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \

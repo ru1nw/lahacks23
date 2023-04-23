@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Consumer } from "./Consumer";
+import { Consumer } from "@/components/Consumer";
 import { Pricing } from "@/components/Pricing";
 import { PrimaryFeatures } from "@/components/PrimaryFeatures";
 import { SecondaryFeatures } from "@/components/SecondaryFeatures";
