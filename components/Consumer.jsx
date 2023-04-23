@@ -21,11 +21,11 @@ export function Consumer() {
         <title>Dashboard - SustainABiz</title>
       </Head>
       <div className="company-card-list">
-        <CompanyCard name="First Clothing" goals={lorem} logo="" percent={80} seg={[true, true, false]} />
-        <CompanyCard name="Second-hand Car" goals={lorem} logo="" percent={80} seg={[false, true, true]} />
-        <CompanyCard name="Third Beauty" goals={lorem} logo="" percent={50} seg={[false, false, true]} />
-        <CompanyCard name="Bach and Fourth" goals={lorem} logo="" percent={20} seg={[true, false, true]} />
-        <CompanyCard name="Fifth Ave Boba" goals={company_text} logo="" percent={20} seg={[false, true, false]} />
+        <CompanyCard name="First Clothing" goals={lorem} logo={clothes} percent={80} seg={[true, true, false]} />
+        <CompanyCard name="Second-hand Car" goals={lorem} logo={car} percent={80} seg={[false, true, true]} />
+        <CompanyCard name="Third Beauty" goals={lorem} logo={beauty} percent={50} seg={[false, false, true]} />
+        <CompanyCard name="Bach and Fourth" goals={lorem} logo={music} percent={20} seg={[true, false, true]} />
+        <CompanyCard name="Fifth Ave Boba" goals={company_text} logo={boba} percent={20} seg={[false, true, false]} />
       </div>
     </>
   )
