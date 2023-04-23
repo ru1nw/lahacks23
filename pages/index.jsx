@@ -2,14 +2,17 @@ import Head from "next/head";
 
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Consumer } from "@/components/Consumer";
-import { Pricing } from "@/components/Pricing";
-import { PrimaryFeatures } from "@/components/PrimaryFeatures";
-import { SecondaryFeatures } from "@/components/SecondaryFeatures";
-import { Testimonials } from "@/components/Testimonials";
-import Profile from "@/components/Profile";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const { user } = useUser();
+
+  if (user) {
+    router.push("/dashboard");
+  }
+
   return (
     <>
       <Head>
