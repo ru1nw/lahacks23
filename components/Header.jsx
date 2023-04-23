@@ -86,16 +86,31 @@ function MobileNavigation() {
   );
 }
 
-export function Header() {
+export function Header({ variant }) {
   const { user } = useUser();
 
   return (
     <header className="py-10">
       <Container>
         <nav className="relative z-50 flex items-center justify-between">
-          <Link href="#" aria-label="Home">
-            <Logo className="h-14 w-auto" />
-          </Link>
+          <div className="flex items-center md:gap-x-12">
+            <Link href="#" aria-label="Home">
+              <Logo className="h-14 w-auto" />
+            </Link>
+            {variant === "business" ? (
+              <div className="hidden md:flex md:gap-x-6">
+                <NavLink href="/business-dashboard">Dashboard</NavLink>
+                <NavLink href="/search">Search</NavLink>
+                <NavLink href="/upgrade">Upgrade</NavLink>
+              </div>
+            ) : variant === "consumer" ? (
+              <div className="hidden md:flex md:gap-x-6">
+                <NavLink href="/search">Search</NavLink>
+              </div>
+            ) : (
+              <></>
+            )}
+          </div>
           {user ? (
             <NavLink href="/api/auth/logout" type="a">
               Sign out
