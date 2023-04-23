@@ -6,13 +6,15 @@ import { useRouter } from "next/router";
 export default function Dashboard() {
   const router = useRouter();
   const [status, setStatus] = useState("doing");
+  const [postData, setPostData] = useState(null);
 
   return (
     <>
-      <Header variant={status === "done" && "business"} />
+      <Header variant={status === "done" && postData.type} />
       {status === "doing" ? (
         <Form
           onSubmit={(postData) => {
+            setPostData(postData);
             setStatus("loading");
             setTimeout(() => setStatus("done"), 2500);
           }}
@@ -47,9 +49,9 @@ export default function Dashboard() {
             {/* button to go to the dashboard */}
             <button
               className="mt-4 px-4 py-2 bg-gray-900 text-white rounded-md"
-              onClick={() => router.push("/business-dashboard")}
+              onClick={() => router.push(postData.type === "business" ? "/business-dashboard" : "/search")}
             >
-              Go to Dashboard
+              Go to {postData.type === "business" ? "Dashboard" : "Search"}{" "}
             </button>
           </div>
         </>

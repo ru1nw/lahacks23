@@ -1,11 +1,14 @@
 import { useMemo, useState } from "react";
 import UserTypeSelector from "./UserTypeSelector";
 import BusinessQuestion1 from "./BusinessQuestion1";
-import ConsumerQuestion1 from "./ConsumerQuestion1";
 import BusinessQuestion2 from "./BusinessQuestion2";
 import BusinessQuestion3 from "./BusinessQuestion3";
 import BusinessQuestion4 from "./BusinessQuestion4";
 import BusinessQuestion5 from "./BusinessQuestion5";
+
+import ConsumerQuestion1 from "./ConsumerQuestion1";
+import ConsumerQuestion2 from "./ConsumerQuestion2";
+import ConsumerQuestion3 from "./ConsumerQuestion3";
 
 export default function Form({ onSubmit }) {
   const [page, setPage] = useState(0); // [0, 1, 2, 3, 4, 5]
@@ -16,27 +19,41 @@ export default function Form({ onSubmit }) {
     waterConservationInput: "",
     sustainableSourcingInput: "",
     equipmentInput: "",
+
+    esgPriorities: "",
+    esgCriteria: "",
+    esgTradeoff: "",
   });
   const isValid = useMemo(() => {
-    if (page === 0) {
-      return !!formData.type;
+    if (formData.type === "business") {
+      switch (page) {
+        case 0:
+          return !!formData.type;
+        case 1:
+          return !!formData.energyEfficiencyInput;
+        case 2:
+          return !!formData.wasteReductionInput;
+        case 3:
+          return !!formData.waterConservationInput;
+        case 4:
+          return !!formData.sustainableSourcingInput;
+        case 5:
+          return !!formData.equipmentInput;
+      }
+    } else if (formData.type === "consumer") {
+      switch (page) {
+        case 0:
+          return !!formData.type;
+        case 1:
+          return !!formData.esgPriorities;
+        case 2:
+          return !!formData.esgCriteria;
+        case 3:
+          return !!formData.esgTradeoff;
+      }
     }
-    if (page === 1) {
-      return !!formData.energyEfficiencyInput;
-    }
-    if (page === 2) {
-      return !!formData.wasteReductionInput;
-    }
-    if (page === 3) {
-      return !!formData.waterConservationInput;
-    }
-    if (page === 4) {
-      return !!formData.sustainableSourcingInput;
-    }
-    if (page === 5) {
-      return !!formData.equipmentInput;
-    }
-    return true;
+
+    return false;
   }, [page, formData]);
 
   function conditionalComponent() {
@@ -69,7 +86,17 @@ export default function Form({ onSubmit }) {
     } else {
       switch (page) {
         case 1:
-          return <ConsumerQuestion1 />;
+          return (
+            <ConsumerQuestion1 formData={formData} setFormData={setFormData} />
+          );
+        case 2:
+          return (
+            <ConsumerQuestion2 formData={formData} setFormData={setFormData} />
+          );
+        case 3:
+          return (
+            <ConsumerQuestion3 formData={formData} setFormData={setFormData} />
+          );
       }
     }
   }
@@ -109,7 +136,10 @@ export default function Form({ onSubmit }) {
           } border-2 rounded-full shadow-lg p-4`}
           disabled={!isValid}
           onClick={() => {
-            if (page === 5) {
+            if (
+              (page === 5 && formData.type === "business") ||
+              (page === 3 && formData.type === "consumer")
+            ) {
               onSubmit(formData);
               return;
             }
@@ -117,7 +147,8 @@ export default function Form({ onSubmit }) {
           }}
         >
           {/* This should be a right arrow, with the exception of the last page, wherein the right arrow should be a checkmark instead. */}
-          {page === 5 ? (
+          {(page === 5 && formData.type === "business") ||
+          (page === 3 && formData.type === "consumer") ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className={`h-6 w-6 ${
