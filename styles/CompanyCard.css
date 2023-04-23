@@ -1,0 +1,13 @@
+.company-card {
+    text-align: center;
+}
+
+.company-card > h1 {
+    font-size: revert;
+    line-height: revert;
+}
+
+.company-card > p {
+    font-size: revert;
+    line-height: revert;
+}

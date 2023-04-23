@@ -1,0 +1,8 @@
+.page-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.page-list > li {
+    list-style: revert;
+}
