@@ -1,13 +1,66 @@
 .company-card {
+    border-radius: 43px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+    padding: 1.2em;
+}
+
+.company-card > img {
+    background-color: #E8B8B8;
+    border-radius: 1.6em;
+    min-height: 100%;
+    width: 12%;
+}
+
+.company-info {
+    grid-template-columns: repeat(2, 1fr);
+    width: 60%;
+}
+
+.company-info-top {
+    display: flex;
+}
+
+.company-info-top > * {
+    align-self: center;
+    flex: 1;
+}
+
+.company-info-top > h1 {
+    font-size: revert;
+    line-height: revert;
+}
+
+.company-seg {
+    column-gap: 0.8em;
+    display: flex;
+    font-size: 1.2em;
+}
+
+.seg-s {
+    color: #8FD7FF;
+}
+
+.seg-e {
+    color: #56FF67;
+}
+
+.seg-g {
+    color: #FF5B5B;
+}
+
+.company-info > p {
+    font-size: 1.2em;
+    line-height: revert;
+}
+
+.company-ecoscore {
     text-align: center;
+    width: 20%;
 }
 
-.company-card > h1 {
-    font-size: revert;
-    line-height: revert;
-}
-
-.company-card > p {
-    font-size: revert;
-    line-height: revert;
+.company-ecoscore > img {
+    margin: 0 auto;
 }
