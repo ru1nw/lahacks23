@@ -9,23 +9,19 @@ import { Pricing } from "@/components/Pricing";
 import { PrimaryFeatures } from "@/components/PrimaryFeatures";
 import { SecondaryFeatures } from "@/components/SecondaryFeatures";
 import { Testimonials } from "@/components/Testimonials";
-import Profile from "@/components/Profile";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>TaxPal - Accounting made simple for small businesses</title>
+        <title>SustainaBIZ - Finding local businesses that care</title>
         <meta
           name="description"
-          content="Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited."
+          content="SustainaBIZ matches you with local businesses that share your values to make the world a better place."
         />
       </Head>
       <Header />
       <main>
-        <Profile />
-        <a href="/api/auth/login">Login</a>
-        <a href="/api/auth/logout">Logout</a>
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
