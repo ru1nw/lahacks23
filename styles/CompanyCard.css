@@ -10,7 +10,7 @@
 .company-card > img {
     background-color: #E8B8B8;
     border-radius: 1.6em;
-    min-height: 100%;
+    aspect-ratio: 1/1;
     width: 12%;
 }
 

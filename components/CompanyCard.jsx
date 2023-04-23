@@ -26,7 +26,7 @@ function SEG([s, e, g]) {
 export function CompanyCard(props) {
     return (
       <div className="company-card">
-        <img src={props.logo} alt={props.name} />
+        <Image src={props.logo} alt={props.name} />
         <div className="company-info">
           <div className="company-info-top">
             <h1>{props.name}</h1>
